@@ -3,8 +3,8 @@ const { Schema } = mongoose;
 const { compareSync, hashSync, genSaltSync } = require("bcryptjs");
 
 const UserSchema = new Schema({
-    name: {type: String, required: true} ,
-    username: {type: String, required: true },
+    name: { type: String, required: true } ,
+    username: { type: String, required: true },
     password: { type: String, required: true }
 });
 
@@ -21,7 +21,7 @@ UserSchema.methods.comparePasswords = function(password){
 };
 
 // cada vez que se vaya a guardar un usuario se le aplica la logica para hashear el password
-UserSchema.pre('save', async function(next){
+UserSchema.pre("save", async function(next){
     const user = this; // this hace referencia al usuario que se esta guardando
 
     if (!user.isModified("password")) {
