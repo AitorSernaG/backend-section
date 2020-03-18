@@ -9,8 +9,10 @@ class BaseRepository{
     }
 
     // retornar todos los objetos dentro de una coleccion especifica
-    async getAll(){
-        return await this.model.find();
+    async getAll(pageSize = 5, pageNum = 1){
+        
+        const skips = pageSize * (pageNum - 1);
+        return await this.model.find().skip(skips).limit(pageSize);
     }
 
     //  crear un objeto
