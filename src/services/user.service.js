@@ -10,7 +10,6 @@ class UserService extends BaseService {
   async getUserByUsername(username) {
     return await _userRepository.getUserByUsername(username);
   }
-  
 }
 
 module.exports = UserService;

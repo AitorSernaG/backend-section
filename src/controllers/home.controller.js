@@ -1,19 +1,13 @@
 let _homeService = null;
 
-class HomeController{
+class HomeController {
+  constructor({ HomeService }) {
+    _homeService = HomeService;
+  }
 
-    constructor({ HomeService }){
-
-        _homeService = HomeService;
-    }
-
-    index(req, res){
-
-        return res.send(_homeService.index());
-
-    }
-
+  index(req, res) {
+    return res.send(_homeService.index());
+  }
 }
-
 
 module.exports = HomeController;
