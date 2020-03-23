@@ -1,7 +1,7 @@
 language: node_js
 node_js: 
     - stable
-deploy:
+deply:
   provider: heroku
   app: shareyourideas-nodejs
   api_key:
