@@ -8,7 +8,7 @@ mongoose.set("useCreateIndex", true);
 mongoose
   .connect(MONGO_URI, {
     useNewUrlParser: true,
-    useFindAndModify: false,
+    useFindAndModify: true,
     useUnifiedTopology: true
   })
   .then(() => server.start())
