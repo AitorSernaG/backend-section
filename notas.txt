@@ -1,0 +1,1 @@
+docker-compose up --build  (levantar el servidor con el archivo docker-compose, teniendo ya un dockerfile)
